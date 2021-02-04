@@ -9,7 +9,8 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
-inoremap jj <Esc>
+inoremap hj <Esc>
+inoremap jh <Esc>
 
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
@@ -32,7 +33,6 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
-vnoremap jj <Esc>
 
 " Better window navigation
 nnoremap <C-h> <C-w>h
@@ -42,3 +42,6 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
+
+" Use cocsearch on the curser variable
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>

@@ -11,6 +11,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot'
     " File Explorer
     Plug 'scrooloose/NERDTree'
+    " Comments 
+    Plug 'tpope/vim-commentary'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " One dark theme "
@@ -26,10 +28,23 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
-    " Plugin nvim for Go
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    " Plug 'zchee/nvim-go', { 'do': 'make'}
     " FZF file searching
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
+    " Git integration
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
+    Plug 'APZelos/blamer.nvim'
+    " Close buffer without closing split
+    Plug 'qpkorr/vim-bufkill'
+    " Sneak helps to search/naviate withough using the commands /?
+    Plug 'justinmk/vim-sneak'
+    " Language oriented Plugins
+    " Plugins nvim for Go
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    " Plugins nvim for python
 call plug#end()
