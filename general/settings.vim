@@ -1,6 +1,6 @@
 " set leader key
 let g:mapleader = "\<Space>"
-let g:python3_host_prog = expand("/home/jjalonsoc/.pyenv/shims/python")
+let g:python3_host_prog = expand("/home/jjalonsoc/.pyenv/versions/neovim3/bin/python")
 let g:go_highlight_types = 1
 
 syntax enable                           " Enables syntax highlighing
@@ -25,6 +25,7 @@ set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=0                        " Always display the status line
 set number                              " Line numbers
+set relativenumber                      " relative numbers, easier to do 3j or 4k
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
@@ -37,8 +38,21 @@ set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 "set autochdir                           " Your working directory will always be the same as your working directory
 set autoread                            " Autoread in case of changes done in disk like changeing branches"
+set scrolloff=999                       " Scrolloff to a high number keetps the scroll centerted
+setglobal commentstring=#\ %s
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
-
+au BufReadPost .envrc set syntax=sh     " syntax for envrx from direnv equal to executables sh"
 " You can't stop me
 cmap w!! w !sudo tee %
+" Wrap for markdown files, long lines will be displayed as paragraphs
+" augroup Markdown
+"   autocmd!
+"   autocmd FileType markdown set wrap
+" augroup END
+
+" Folding functions
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
